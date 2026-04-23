@@ -1,0 +1,8 @@
+interface:
+  display_name: "WF"
+  short_description: "Explicit repo workflow and project catch-up"
+  brand_color: "#0F766E"
+  default_prompt: "Use $wf to bootstrap or catch up on a project, maintain TODO.md and LOG.md, and work from ARCHITECTURE/current/."
+
+policy:
+  allow_implicit_invocation: false
