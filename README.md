@@ -1,6 +1,6 @@
 # WF
 
-`WF` is an explicit project-mode skill for Codex. It is designed for repository work that needs structured catch-up, planning, architecture maintenance, implementation discipline, and lightweight tracking without making that workflow always-on.
+`WF` is an explicit project-mode skill for Codex. It is designed for repository work that needs structured catch-up, retrofit, planning, architecture maintenance, implementation discipline, and lightweight tracking without making that workflow always-on.
 
 The explicit trigger is `$wf`.
 
@@ -11,6 +11,7 @@ This skill keeps normal chat and writing unstructured by default, then adds a pr
 Use it when you want Codex to:
 
 - bootstrap docs and tracking for a new project
+- retrofit an existing repo into the standard WF structure
 - catch up on an existing repo
 - update architecture docs
 - plan tracked work
@@ -33,7 +34,9 @@ Examples:
 
 ```text
 use $wf, I'm starting a new project for ...
+use $wf arche
 use $wf and review this repo
+use $wf and split this into sessions
 use $wf and plan feature X
 use $wf and update the architecture for subsystem Y
 use $wf and debug the current check-in flow
@@ -43,6 +46,9 @@ use $wf and debug the current check-in flow
 
 - New project bootstrap
   - `use $wf, I'm starting a new project for ...`
+- Existing project retrofit
+  - `use $wf arche`
+  - `use $wf arche this repo`
 - Existing project catch-up
   - `use $wf and review this repo`
   - `use $wf and catch me up on this project`
@@ -64,8 +70,9 @@ use $wf and debug the current check-in flow
 - treats `ARCHITECTURE/current/` as canonical
 - avoids `ARCHITECTURE/archive/` by default
 - reads only the relevant docs and code for the task
-- uses `TODO.md` for active tasks and near-next work
-- uses `LOG.md` only for milestones, decisions, and handoff notes
+- can restore or normalize `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` in an existing repo when asked
+- uses `TODO.md` as a clean session tracker for current and near-next work
+- uses `LOG.md` as a dated record of completed sessions, decisions, and handoff notes
 - prefers subsystem-level architecture docs over overly fragmented micro-docs
 
 ## What It Does Not Do
@@ -73,7 +80,10 @@ use $wf and debug the current check-in flow
 - it is not a permanent always-on mode
 - it does not read the full architecture tree by default
 - it does not replace code inspection with documentation
+- it does not turn `TODO.md` into a long backlog
 - it does not encourage per-function architecture docs by default
+
+`$wf arche` is the shorthand for adopting the WF structure in an existing project by creating or normalizing `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` without treating the repo as a brand-new project.
 
 ## Recommended Architecture Doc Model
 
