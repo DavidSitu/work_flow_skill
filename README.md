@@ -14,7 +14,7 @@ Use it when you want Codex to:
 - retrofit an existing repo into the standard WF structure
 - catch up on an existing repo
 - update architecture docs or plan the overall architecture
-- plan lightweight V0/V1/final-product milestones during architecture work
+- plan lightweight V0/V1/optional V2+/final-product milestones during architecture work
 - plan tracked work
 - implement scoped changes
 - review or debug current behavior
@@ -38,6 +38,7 @@ use $wf, I'm starting a new project for ...
 use $wf retrofit
 use $wf arche
 use $wf arche and plan the V1 milestones
+use $wf arche and split the final goal into V1/V2 milestones
 use $wf and review this repo
 use $wf and split this into sessions
 use $wf and plan feature X
@@ -66,6 +67,7 @@ use $wf and debug the current check-in flow
   - `use $wf arche`
   - `use $wf arche and plan the overall architecture`
   - `use $wf arche and plan the V1 milestones`
+  - `use $wf arche and split the final goal into V1/V2 milestones`
   - `use $wf and update the architecture for subsystem Y`
   - `use $wf and document this repo structure`
 - Review and debugging
@@ -79,7 +81,7 @@ use $wf and debug the current check-in flow
 - reads only the relevant docs and code for the task
 - can restore or normalize `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` in an existing repo when asked
 - uses a standard architecture folder contract for project intent, system design, UI design, repo mapping, subsystem docs, and optional ADRs
-- can plan compact V0/V1/V1.x/final-product milestones as architecture direction
+- can plan compact V0/V1/V1.x/optional V2+/final-product milestones as architecture direction
 - uses `TODO.md` and `LOG.md` as the WF session tracking standard for current work, completed sessions, and handoff notes
 - prefers subsystem-level architecture docs over overly fragmented micro-docs
 
@@ -94,7 +96,7 @@ use $wf and debug the current check-in flow
 - it does not treat `TODO.md` or `LOG.md` as an industry standard; they are WF's lightweight repo-local tracking convention
 - it does not encourage per-function architecture docs by default
 
-`$wf arche` is the shorthand for architecture planning, lightweight milestone planning, and architecture updates. It should be planning-first when architecture direction is unclear, and direct-edit when the requested architecture change is already clear. Use `$wf arche` to plan V1/final-product milestones when product direction affects architecture. Use `$wf retrofit` to adopt the WF structure in an existing project by creating or normalizing `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` without treating the repo as a brand-new project.
+`$wf arche` is the shorthand for architecture planning, lightweight milestone planning, and architecture updates. It should be planning-first when architecture direction is unclear, and direct-edit when the requested architecture change is already clear. Use `$wf arche` to plan V1, optional V2+, and final-product milestones when product direction affects architecture. Use `$wf retrofit` to adopt the WF structure in an existing project by creating or normalizing `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` without treating the repo as a brand-new project.
 
 ## Milestone Planning
 
@@ -103,9 +105,10 @@ WF can keep compact milestone direction in `ARCHITECTURE/current/01-project-inte
 - `V0`: smallest useful proving version or internal prototype
 - `V1`: first coherent user-facing product version
 - `V1.x`: near-term post-V1 improvements that should not block V1
+- `V2`, `V3`, `V4+`: larger product generations used only for meaningful capability jumps
 - `Final Product Direction`: long-term north star, not a committed backlog
 
-Milestones guide architecture and session planning. `TODO.md` should still contain only current and near-next executable sessions.
+Use the fewest milestone versions needed to make the roadmap clear. Milestones guide architecture and session planning. `TODO.md` should still contain only current and near-next executable sessions.
 
 ## Session Tracking
 

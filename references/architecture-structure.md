@@ -18,7 +18,7 @@ For `$wf arche`, first determine whether the user wants exploration, an architec
 - Use current code and current docs as runtime truth for what exists now.
 - Treat product direction, scope, constraints, tradeoffs, and target users as user intent.
 - When architecture intent is unclear, clarify project goal, target users, in-scope and out-of-scope areas, constraints, system type, desired documentation depth, and whether ADRs are needed before writing docs.
-- When the user asks for V1, roadmap, milestones, phases, or final-product direction, use `references/milestone-planning.md`.
+- When the user asks for V1, V2+, roadmap, milestones, phases, or final-product direction, use `references/milestone-planning.md`.
 - When the user is in Codex Plan Mode, produce a decision-complete architecture plan before file changes.
 - When the user has already specified the architecture change clearly, update the relevant docs directly.
 - Do not update `TODO.md` for pure architecture discussion unless the architecture work becomes tracked project work.
@@ -74,7 +74,7 @@ Create ADRs only for decisions future contributors would otherwise re-litigate o
 
 ## Milestones And Roadmap
 
-Use `references/milestone-planning.md` when `$wf arche` needs V0, V1, V1.x, roadmap, phase, or final-product direction.
+Use `references/milestone-planning.md` when `$wf arche` needs V0, V1, V1.x, optional V2+, roadmap, phase, or final-product direction.
 
 Keep milestone summaries compact inside `ARCHITECTURE/current/01-project-intent.md`. Milestones guide architecture and session planning, but they are not TODO sessions or ADRs.
 

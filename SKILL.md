@@ -100,11 +100,11 @@ Use when the user asks to review the current state, catch up on a repo, or under
 
 ### architecture-update
 
-Use when the user wants to update architecture docs, plan the overall architecture, plan V1/final-product milestones, or clarify subsystem boundaries.
+Use when the user wants to update architecture docs, plan the overall architecture, plan V1, optional V2+, and final-product milestones, or clarify subsystem boundaries.
 
 - Read only the affected current docs.
 - Read `references/architecture-structure.md` for the standard file roles and folder contract.
-- Read `references/milestone-planning.md` when product direction is unclear or the user asks for a V1, roadmap, milestone, or final-product plan.
+- Read `references/milestone-planning.md` when product direction is unclear or the user asks for a V1, optional V2+, roadmap, milestone, or final-product plan.
 - Inspect code if needed to confirm runtime truth.
 - Use a planning-first workflow when architecture intent is unclear or the request involves major tradeoffs.
 - Clarify the architecture scope first: overall system, top-level docs, or one subsystem.
@@ -154,7 +154,7 @@ Use when the user asks for review, diagnosis, or debugging.
 
 - Read `references/planning-rules.md` when planning or reviewing task slices.
 - Read `references/session-tracking.md` when creating, normalizing, or updating `TODO.md` and `LOG.md`.
-- Read `references/milestone-planning.md` when planning V0, V1, V1.x, final-product direction, or roadmap-like architecture direction.
+- Read `references/milestone-planning.md` when planning V0, V1, V1.x, optional V2+, final-product direction, or roadmap-like architecture direction.
 - Read `references/retrofit-rules.md` when handling `$wf retrofit` or normalizing an existing repo into the WF structure.
 - Read `references/architecture-structure.md` when creating, normalizing, or updating `ARCHITECTURE/`.
 - Read `references/doc-update-rules.md` when deciding which architecture doc to update.

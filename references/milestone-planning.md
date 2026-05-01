@@ -9,7 +9,7 @@ Milestones are product and architecture direction. They are not execution sessio
 Use milestone planning when:
 
 - product direction is unclear during `$wf arche`
-- the user asks for V1, roadmap, milestones, phases, or final-product direction
+- the user asks for V1, V2+, roadmap, milestones, phases, or final-product direction
 - architecture choices depend on the intended product phase
 - a large request needs a roadmap before it can be split into sessions
 
@@ -23,12 +23,17 @@ Do not create a separate `ARCHITECTURE/current/05-roadmap.md` in this version. D
 
 ## Milestone Format
 
-Use these milestone labels by default:
+Use the fewest milestone labels needed to make the roadmap clear. The default ladder is:
+
+`V0 -> V1 -> optional V1.x -> optional V2/V3/V4+ -> Final Product Direction`
 
 - `V0`: the smallest useful proving version or internal prototype
 - `V1`: the first coherent user-facing product version
 - `V1.x`: near-term post-V1 improvements that should not block V1
+- `V2`, `V3`, `V4+`: larger product generations added only when each version represents a meaningful capability jump toward the final goal
 - `Final Product Direction`: the long-term north star, not a committed backlog
+
+Do not force `V2+`. Add major versions only when the final goal is too complex for `V1` plus `V1.x`. Use `V1.x` for incremental improvements and `V2+` for distinct product generations.
 
 For each milestone, capture only:
 
@@ -38,7 +43,7 @@ For each milestone, capture only:
 - Architecture implications: system boundaries, data, UI, integration, or subsystem consequences
 - Acceptance signal: how the milestone can be recognized as complete enough
 
-Keep milestone entries concise. Prefer 3-6 bullets per milestone over a long roadmap.
+Keep milestone entries concise. Prefer 3-6 bullets per milestone over a long roadmap. If `V2+` exists, each major version should have a distinct outcome and acceptance signal.
 
 ## Relationship To TODO.md
 
@@ -52,7 +57,8 @@ Milestones guide session planning but do not belong in `TODO.md`.
 ## Planning Flow
 
 1. Confirm the product goal, target users, scope, non-goals, constraints, and current phase.
-2. Draft `V0`, `V1`, `V1.x`, and `Final Product Direction` only as far as the user intent supports.
-3. Identify architecture implications before proposing subsystem or repo changes.
-4. Update `01-project-intent.md` when milestones become accepted project direction.
-5. Create or update `TODO.md` only if the milestone plan turns into tracked implementation work.
+2. Draft `V0`, `V1`, optional `V1.x`, optional `V2+`, and `Final Product Direction` only as far as the user intent supports.
+3. Use `V2+` only for major capability jumps; otherwise keep the roadmap to `V0`, `V1`, optional `V1.x`, and `Final Product Direction`.
+4. Identify architecture implications before proposing subsystem or repo changes.
+5. Update `01-project-intent.md` when milestones become accepted project direction.
+6. Create or update `TODO.md` only if the milestone plan turns into tracked implementation work.

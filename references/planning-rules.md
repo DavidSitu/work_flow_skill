@@ -3,7 +3,7 @@
 Use these rules when `$WF` is handling planning, review, or scoped implementation work.
 
 Use `references/session-tracking.md` for the canonical `TODO.md` and `LOG.md` formats.
-Use `references/milestone-planning.md` when a plan depends on V0, V1, V1.x, roadmap, phase, or final-product direction.
+Use `references/milestone-planning.md` when a plan depends on V0, V1, V1.x, optional V2+, roadmap, phase, or final-product direction.
 
 ## Task Slicing
 
