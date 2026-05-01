@@ -28,12 +28,13 @@ Ensure these exist when needed:
 - `LOG.md`
 - the standard `ARCHITECTURE/` skeleton from `references/architecture-structure.md`
 
+Use `references/session-tracking.md` as the format contract for `TODO.md` and `LOG.md`.
+
 Create the four standard current architecture docs when reconstructing architecture. Mark `03-overall-ui-design.md` as `N/A` with a short reason for backend-only, CLI-only, or library projects. Create `ARCHITECTURE/decisions/` only when recording actual ADRs.
 
 ## TODO Migration Rules
 
-- Convert active work into the standard session-based structure.
-- Use one date heading with session sections such as `S1`, `S2`, `S3`.
+- Convert active work into the standard session-based structure from `references/session-tracking.md`.
 - Keep only the current and near-next sessions in `TODO.md`.
 - Do not copy a long stale backlog into the new `TODO.md`.
 - If an old `TODO.md` contains mixed backlog and active work, preserve the useful active items and summarize any dropped backlog in the handoff.
@@ -43,7 +44,7 @@ Create the four standard current architecture docs when reconstructing architect
 - Preserve useful history.
 - Normalize only enough to make future entries consistent.
 - Do not rewrite a large historical log unless the user asks for a full cleanup.
-- New entries should follow the same date and session IDs used in `TODO.md`.
+- New entries should follow `references/session-tracking.md` and use the same date and session IDs used in `TODO.md`.
 
 ## Architecture Recovery Rules
 

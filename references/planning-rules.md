@@ -2,6 +2,8 @@
 
 Use these rules when `$WF` is handling planning, review, or scoped implementation work.
 
+Use `references/session-tracking.md` for the canonical `TODO.md` and `LOG.md` formats.
+
 ## Task Slicing
 
 - Prefer session-sized tasks that affect one subsystem or one clear behavior.
@@ -12,43 +14,19 @@ Use these rules when `$WF` is handling planning, review, or scoped implementatio
 
 ## TODO Discipline
 
-Use `TODO.md` as a clean session tracker, not a backlog.
+Use `TODO.md` as the active session queue, not a backlog.
 
-Format it with:
-
-- a date heading using `YYYY-MM-DD`
-- session sections such as `S1`, `S2`, `S3`
-- a short title for each session
-- a small checkbox list for that session only
-
-Keep in `TODO.md`:
-
-- the current session
-- the next few planned sessions
-- blockers only when they affect an active or near-next session
-
-Do not keep a long master task list in `TODO.md`.
-
-If a request is too large, split it into additional sessions instead of extending one session indefinitely.
+- Follow `references/session-tracking.md` for the exact file format.
+- Keep only the current session, the next few planned sessions, and blockers that affect active or near-next work.
+- If a request is too large, split it into additional sessions instead of extending one session indefinitely.
 
 ## LOG Discipline
 
-Use `LOG.md` as the dated record of completed sessions that matches the session structure in `TODO.md`.
+Use `LOG.md` as the completed-session record.
 
-Format it with:
-
-- the same date heading used for the work
-- the same session IDs such as `S1`, `S2`, `S3`
-- a brief session title when helpful
-
-Each log entry should record only useful outcomes, such as:
-
-- what was completed
-- the key result or decision
-- the verification outcome when it mattered
-- a blocker or handoff only if it affects the next session
-
-Do not log every prompt, every edit, or in-progress work that has not reached a useful stopping point.
+- Follow `references/session-tracking.md` for the exact file format.
+- Record useful outcomes, verification, decisions, blockers, or handoff notes.
+- Do not log every prompt, every edit, or in-progress work that has not reached a useful stopping point.
 
 ## Review Flow
 

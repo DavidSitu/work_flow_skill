@@ -14,11 +14,9 @@ Use this skill only when the user explicitly invokes `$wf` or clearly asks for t
 - Do not read `ARCHITECTURE/archive/` unless the user explicitly asks for historical context, migration history, or past reasoning.
 - Read only the relevant docs and code for the task. Do not load the whole architecture tree by default.
 - Documentation guides understanding. Runtime code is still the final source of truth for actual behavior.
-- Treat `TODO.md` as a clean session tracker, not a backlog.
-- Organize `TODO.md` under a date heading using `YYYY-MM-DD`, then session sections such as `S1`, `S2`, `S3`.
-- Keep each session section small enough for one focused work session, with a short title and a small checklist.
-- Keep only the current session and the next few sessions in `TODO.md`.
-- Use `LOG.md` as the matching dated record of completed or meaningfully concluded sessions, using the same session IDs.
+- Treat `TODO.md` as the active session queue, not a backlog.
+- Treat `LOG.md` as the completed-session record, not a transcript or changelog.
+- Use the WF session tracking standard in `references/session-tracking.md` when creating, normalizing, or updating `TODO.md` and `LOG.md`.
 - Treat `$wf arche` as shorthand for architecture planning and architecture updates.
 - Treat `$wf retrofit` as shorthand for restoring or normalizing the standard WF structure in an existing repository.
 - Use the standard architecture folder contract in `references/architecture-structure.md` when bootstrapping, retrofitting, or updating architecture docs.
@@ -73,7 +71,7 @@ Use when the user is starting a new project or explicitly asks to set up the wor
 - Create `ARCHITECTURE/`, `TODO.md`, and `LOG.md` if they do not already exist.
 - Create the standard architecture skeleton from `references/architecture-structure.md`.
 - Create initial subsystem docs only for clearly known functional areas.
-- Seed `TODO.md` with an initial date heading and a few session-sized checklist blocks.
+- Seed `TODO.md` and `LOG.md` from `references/session-tracking.md`.
 - Add a short `LOG.md` entry only after meaningful setup work is complete.
 
 ### retrofit-existing-project
@@ -84,6 +82,7 @@ Use when the user wants to adopt the WF workflow in the middle of an existing re
 - Preserve useful existing content by default instead of replacing it.
 - Create missing standard WF files and folders only where needed.
 - Normalize tracking and architecture structure conservatively when existing files are nonstandard.
+- Normalize tracking files against `references/session-tracking.md`.
 - Normalize architecture docs against `references/architecture-structure.md`.
 - Seed `TODO.md` in the current session-based format.
 - Add a short `LOG.md` entry only after the retrofit work is meaningfully complete.
@@ -117,6 +116,7 @@ Use when the user asks for task planning, breakdown, or sequencing.
 
 - Read the relevant docs and code.
 - Break work into small verifiable session-sized slices.
+- Read `references/session-tracking.md` before creating or rewriting session entries in `TODO.md`.
 - Refine `TODO.md` using dated session sections instead of a long undifferentiated task list.
 - If a task spans multiple systems or would take multiple sittings, split it into sequenced sessions.
 - Update architecture docs only if product or system truth changes.
@@ -132,6 +132,7 @@ Use when the user asks to build or change a concrete behavior.
 - If the task is too large for one focused session, split it into the next session entries in `TODO.md`.
 - Implement only what the current session needs.
 - Run the smallest useful verification.
+- Read `references/session-tracking.md` before moving session outcomes from `TODO.md` to `LOG.md`.
 - Update `LOG.md` using the same date and session ID when a session is completed or reaches a meaningful stopping point.
 
 ### review-debugging
@@ -146,6 +147,7 @@ Use when the user asks for review, diagnosis, or debugging.
 ## Reference Files
 
 - Read `references/planning-rules.md` when planning or reviewing task slices.
+- Read `references/session-tracking.md` when creating, normalizing, or updating `TODO.md` and `LOG.md`.
 - Read `references/retrofit-rules.md` when handling `$wf retrofit` or normalizing an existing repo into the WF structure.
 - Read `references/architecture-structure.md` when creating, normalizing, or updating `ARCHITECTURE/`.
 - Read `references/doc-update-rules.md` when deciding which architecture doc to update.

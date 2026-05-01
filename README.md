@@ -76,8 +76,7 @@ use $wf and debug the current check-in flow
 - reads only the relevant docs and code for the task
 - can restore or normalize `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` in an existing repo when asked
 - uses a standard architecture folder contract for project intent, system design, UI design, repo mapping, subsystem docs, and optional ADRs
-- uses `TODO.md` as a clean session tracker for current and near-next work
-- uses `LOG.md` as a dated record of completed sessions, decisions, and handoff notes
+- uses `TODO.md` and `LOG.md` as the WF session tracking standard for current work, completed sessions, and handoff notes
 - prefers subsystem-level architecture docs over overly fragmented micro-docs
 
 ## What It Does Not Do
@@ -86,9 +85,20 @@ use $wf and debug the current check-in flow
 - it does not read the full architecture tree by default
 - it does not replace code inspection with documentation
 - it does not turn `TODO.md` into a long backlog
+- it does not treat `TODO.md` or `LOG.md` as an industry standard; they are WF's lightweight repo-local tracking convention
 - it does not encourage per-function architecture docs by default
 
 `$wf arche` is the shorthand for architecture planning and architecture updates. Use `$wf retrofit` to adopt the WF structure in an existing project by creating or normalizing `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` without treating the repo as a brand-new project.
+
+## Session Tracking
+
+WF uses a session tracking convention for agent work:
+
+- `TODO.md` is the active session queue, organized by `YYYY-MM-DD` and `S1`, `S2`, `S3` session headings.
+- `LOG.md` is the completed-session record, using the same dates and session IDs with concise outcome summaries.
+- `TODO.md` should stay short and focused on current or near-next sessions.
+- `LOG.md` should record useful completed outcomes, verification, decisions, blockers, and handoff notes.
+- ADRs in `ARCHITECTURE/decisions/` record architecture decisions, not session history.
 
 ## Recommended Architecture Doc Model
 
