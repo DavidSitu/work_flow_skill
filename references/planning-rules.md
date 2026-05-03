@@ -4,15 +4,28 @@ Use these rules when `$WF` is handling planning, review, or scoped implementatio
 
 Use `references/session-tracking.md` for the canonical `TODO.md` and `LOG.md` formats.
 Use `references/milestone-planning.md` when a plan depends on V0, V1, V1.x, optional V2+, roadmap, phase, or final-product direction.
+Use `references/subsystem-planning-rules.md` when a plan involves code ownership, subsystem boundaries, import direction, test ownership, or subsystem-by-subsystem refactoring.
 
 ## Task Slicing
 
 - Prefer session-sized tasks that affect one subsystem or one clear behavior.
+- Prefer one subsystem or one named cross-subsystem integration per implementation session.
 - Each session should be small enough to complete in one focused pass.
 - Each session should have an obvious verification step.
 - If a task spans multiple systems or sittings, split it into sequenced sessions whenever possible.
 - Keep only the current and near-next sessions in `TODO.md`. Remove stale or merged items.
 - Treat milestones as roadmap direction, not session-sized tasks.
+
+## Subsystem Planning Flow
+
+When the user asks for subsystem planning or cleaner code management:
+
+1. Inspect current folders, entrypoints, tests, and relevant architecture docs.
+2. Identify behavior-based subsystem candidates before proposing file moves.
+3. Map existing files to subsystem owners and mark unclear mixed-ownership areas.
+4. Define public entrypoints, internal files, import rules, and test strategy for each candidate.
+5. Split work into sessions that refactor one subsystem or one integration boundary at a time.
+6. Add ADR work only for boundary decisions future contributors would otherwise re-litigate.
 
 ## TODO Discipline
 
@@ -48,6 +61,7 @@ A good plan should:
 - state the goal clearly
 - identify the touched subsystem or code area
 - identify the active milestone when roadmap direction matters
+- identify public APIs, import boundaries, and test ownership when code organization is involved
 - split the work into the smallest useful session-sized slices
 - define how each session will be verified
 - keep the `TODO.md` output clean enough to execute session by session

@@ -30,13 +30,17 @@ Avoid too many tiny docs because they increase:
 
 ## Subsystem Docs
 
+Use `references/subsystem-planning-rules.md` when subsystem granularity, code ownership, import direction, or test strategy is part of the decision.
+
 Create or update a subsystem doc when a change affects one specific area's:
 
 - purpose or scope
+- boundary contract, public API, or internal ownership
 - flows and transitions
 - states and rules
 - APIs, RPCs, jobs, or data dependencies
 - code map
+- import rules or test strategy
 - known gaps
 - safe extension points
 
@@ -47,6 +51,8 @@ Create a subsystem doc only when the area has one or more of these:
 - important states or transitions
 - backend and frontend interaction
 - non-obvious constraints or likely future expansion
+- independently testable behavior
+- owned data, storage, device capability, API contract, or job
 
 Name subsystem docs by bounded behavior, not vague buckets.
 
@@ -61,6 +67,19 @@ Avoid vague buckets such as:
 - `pet-system`
 
 The goal is to name the behavior boundary a contributor actually needs to understand. Do not group unrelated behavior into one vague subsystem doc.
+
+Do not create subsystem docs by default for:
+
+- one function
+- one hook
+- one helper
+- one UI component
+- one UI page that only renders a view
+- a folder that is only an implementation bucket
+
+A UI page can be a subsystem only when it owns a real workflow, state machine, data contract, lifecycle, or cross-layer behavior. Otherwise, document it inside the subsystem that owns the workflow.
+
+Split a subsystem when it has distinct ownership, state, data, dependencies, failure modes, or tests. Merge or avoid splitting when two areas always change together, cannot be tested alone, or would create circular/chattering dependencies.
 
 For a focused task, the ideal documentation read set is usually:
 

@@ -2,13 +2,14 @@
 
 Use this reference when creating, normalizing, or updating `ARCHITECTURE/`.
 
-The WF architecture format is industry-aligned, not a full clone of any one framework. Use arc42-style coverage for goals and constraints, C4-style thinking for system views and boundaries, and optional ADRs for important decisions.
+The WF architecture format is industry-aligned, not a full clone of any one framework. Use arc42-style coverage for goals and constraints, C4-style thinking for system views and boundaries, DDD/vertical-slice thinking for subsystem boundaries, and optional ADRs for important decisions.
 
 Reference anchors:
 
 - arc42: https://arc42.org/
 - C4 model: https://c4model.com/
 - ADRs: https://adr.github.io/
+- Feature-Sliced Design: https://feature-sliced.github.io/documentation/
 
 ## Planning-First Architecture
 
@@ -58,7 +59,11 @@ Use `ARCHITECTURE/current/subsystems/README.md` as the subsystem index and namin
 
 Create `ARCHITECTURE/current/subsystems/<bounded-behavior>.md` only when an area has meaningful behavior or complexity. Name subsystem docs by behavior boundary, not vague buckets. Use `references/subsystem-doc-template.md` for the content shape.
 
-Prefer a few useful subsystem docs over many tiny files. A medium or large app often starts with 4-6 subsystem docs, then expands only when work repeatedly needs more detail.
+Prefer a few useful subsystem docs over many tiny files. A medium app often starts with roughly 4-8 subsystem docs, then expands only when work repeatedly needs more detail.
+
+Use `references/subsystem-planning-rules.md` when deciding subsystem granularity, code ownership, public APIs, import rules, test strategy, or subsystem-by-subsystem refactor order.
+
+Do not create subsystem docs per function, hook, widget, or UI page by default. A page or device capability becomes a subsystem only when it owns a real workflow, lifecycle, state, data contract, dependencies, or test surface.
 
 ## ADRs And Logs
 

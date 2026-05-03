@@ -1,8 +1,8 @@
 interface:
   display_name: "WF"
-  short_description: "Explicit repo workflow and project catch-up"
+  short_description: "Repo workflow, architecture docs, and subsystem-first code management"
   brand_color: "#0F766E"
-  default_prompt: "Use $wf arche for architecture docs and milestones, use $wf retrofit to normalize an existing repo, and keep TODO.md/LOG.md as WF session tracking."
+  default_prompt: "Use $wf arche for architecture docs, milestones, and subsystem boundaries; use $wf retrofit to normalize an existing repo; keep TODO.md/LOG.md as WF session tracking."
 
 policy:
   allow_implicit_invocation: false

@@ -23,6 +23,9 @@ Use this skill only when the user explicitly invokes `$wf` or clearly asks for t
 - Use the standard architecture folder contract in `references/architecture-structure.md` when bootstrapping, retrofitting, or updating architecture docs.
 - Use a two-layer architecture doc model by default: top-level docs for cross-cutting truth, subsystem docs for bounded behavior.
 - Stop at subsystem-level by default. Do not split architecture into per-function docs unless a function is unusually critical or complex.
+- Treat a subsystem as a bounded behavior area that owns meaningful code, state, interfaces, dependencies, and tests.
+- Do not create subsystem docs per function, hook, widget, or UI page by default; a page or device capability becomes a subsystem only when it owns a real workflow or lifecycle.
+- Use `references/subsystem-planning-rules.md` when planning subsystem boundaries, repo layout, import rules, test ownership, or subsystem-by-subsystem refactors.
 
 ## Request Classification
 
@@ -104,6 +107,7 @@ Use when the user wants to update architecture docs, plan the overall architectu
 
 - Read only the affected current docs.
 - Read `references/architecture-structure.md` for the standard file roles and folder contract.
+- Read `references/subsystem-planning-rules.md` when the request involves subsystem granularity, code ownership, test boundaries, import direction, or repo layout.
 - Read `references/milestone-planning.md` when product direction is unclear or the user asks for a V1, optional V2+, roadmap, milestone, or final-product plan.
 - Inspect code if needed to confirm runtime truth.
 - Use a planning-first workflow when architecture intent is unclear or the request involves major tradeoffs.
@@ -111,6 +115,7 @@ Use when the user wants to update architecture docs, plan the overall architectu
 - Confirm project goal, target users, scope, constraints, system type, current milestone, desired documentation depth, and whether ADRs are needed before creating or rewriting architecture docs.
 - Keep milestone summaries compact in `ARCHITECTURE/current/01-project-intent.md`.
 - Plan or revise subsystem boundaries and top-level architecture structure when needed.
+- For subsystem planning, define bounded behavior, owned code, public API, internal files, dependency direction, data ownership, and test strategy.
 - Update only the relevant architecture files.
 - Prefer bounded subsystem docs over many small fragmented documents.
 - Do not touch `archive/` unless the request is explicitly historical.
@@ -121,10 +126,12 @@ Use when the user asks for task planning, breakdown, or sequencing.
 
 - Read the relevant docs and code.
 - Break work into small verifiable session-sized slices.
+- Read `references/subsystem-planning-rules.md` when planning code organization, subsystem splits/merges, isolated testing, or cross-subsystem work.
 - Read `references/session-tracking.md` before creating or rewriting session entries in `TODO.md`.
 - Refine `TODO.md` using dated session sections instead of a long undifferentiated task list.
 - If planning from milestones, derive only current and near-next executable sessions from the active milestone.
 - If a task spans multiple systems or would take multiple sittings, split it into sequenced sessions.
+- Prefer session slices that touch one subsystem or one clearly named cross-subsystem integration.
 - Update architecture docs only if product or system truth changes.
 
 See `references/planning-rules.md` for task slicing and review guidance.
@@ -134,10 +141,12 @@ See `references/planning-rules.md` for task slicing and review guidance.
 Use when the user asks to build or change a concrete behavior.
 
 - Read the relevant docs and code first.
+- Identify the affected subsystem and its public/internal entrypoints before editing when the change is more than a trivial local fix.
 - Refine task tracking only if the task is real project work.
 - If the task is too large for one focused session, split it into the next session entries in `TODO.md`.
 - Implement only what the current session needs.
-- Run the smallest useful verification.
+- Keep imports, tests, and data access aligned with documented subsystem ownership unless the current task is explicitly changing those boundaries.
+- Run the smallest useful verification, preferring subsystem-local tests before broader integration tests.
 - Read `references/session-tracking.md` before moving session outcomes from `TODO.md` to `LOG.md`.
 - Update `LOG.md` using the same date and session ID when a session is completed or reaches a meaningful stopping point.
 
@@ -159,3 +168,4 @@ Use when the user asks for review, diagnosis, or debugging.
 - Read `references/architecture-structure.md` when creating, normalizing, or updating `ARCHITECTURE/`.
 - Read `references/doc-update-rules.md` when deciding which architecture doc to update.
 - Read `references/subsystem-doc-template.md` when creating a new subsystem doc.
+- Read `references/subsystem-planning-rules.md` when defining subsystem granularity, code ownership, import rules, test strategy, or refactor sequencing.

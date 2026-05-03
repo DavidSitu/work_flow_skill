@@ -15,6 +15,7 @@ Use it when you want Codex to:
 - catch up on an existing repo
 - update architecture docs or plan the overall architecture
 - plan lightweight V0/V1/optional V2+/final-product milestones during architecture work
+- plan subsystem-first code organization, import boundaries, and test ownership
 - plan tracked work
 - implement scoped changes
 - review or debug current behavior
@@ -82,6 +83,9 @@ use $wf and debug the current check-in flow
 - can restore or normalize `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` in an existing repo when asked
 - uses a standard architecture folder contract for project intent, system design, UI design, repo mapping, subsystem docs, and optional ADRs
 - can plan compact V0/V1/V1.x/optional V2+/final-product milestones as architecture direction
+- treats subsystems as bounded behavior areas that own code, state, public interfaces, dependencies, and tests
+- avoids creating subsystem docs for every function, hook, widget, helper, or UI page by default
+- supports subsystem-by-subsystem refactor planning with public APIs, import rules, and local verification
 - uses `TODO.md` and `LOG.md` as the WF session tracking standard for current work, completed sessions, and handoff notes
 - prefers subsystem-level architecture docs over overly fragmented micro-docs
 
@@ -95,6 +99,7 @@ use $wf and debug the current check-in flow
 - it does not create business, promotion, GTM, `PRODUCT/`, or `05-roadmap.md` docs in the current version
 - it does not treat `TODO.md` or `LOG.md` as an industry standard; they are WF's lightweight repo-local tracking convention
 - it does not encourage per-function architecture docs by default
+- it does not make every UI page, component, hook, helper, or device button its own subsystem unless it owns meaningful workflow, lifecycle, state, data, dependencies, and tests
 
 `$wf arche` is the shorthand for architecture planning, lightweight milestone planning, and architecture updates. It should be planning-first when architecture direction is unclear, and direct-edit when the requested architecture change is already clear. Use `$wf arche` to plan V1, optional V2+, and final-product milestones when product direction affects architecture. Use `$wf retrofit` to adopt the WF structure in an existing project by creating or normalizing `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` without treating the repo as a brand-new project.
 
@@ -127,6 +132,8 @@ Use a two-layer architecture model:
 - top-level docs for cross-cutting truth
 - subsystem docs for bounded behavior areas
 
+A subsystem should be large enough to test and reason about independently, but not so large that unrelated behavior is grouped together. For a medium app, start with roughly 4-8 subsystem candidates and expand only when repeated work proves the boundary needs its own doc and ownership contract.
+
 The standard current architecture set is:
 
 - `ARCHITECTURE/README.md`: index, reading order, and folder meanings
@@ -136,6 +143,8 @@ The standard current architecture set is:
 - `ARCHITECTURE/current/04-repo-map.md`: folder ownership, entrypoints, module responsibilities, and doc-to-code mapping
 - `ARCHITECTURE/current/subsystems/*.md`: bounded behavior docs using the subsystem template
 - `ARCHITECTURE/decisions/`: optional ADRs for important architecture decisions
+
+Subsystem docs should capture ownership, public entrypoints, internal files, import rules, data ownership, test strategy, known gaps, and safe extension points.
 
 For a focused task, the ideal read set is usually:
 

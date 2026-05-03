@@ -12,6 +12,7 @@ Bring an existing repository into the standard WF structure without treating it 
 - Read the project README and any existing project docs that explain intent or structure.
 - Inspect `TODO.md`, `LOG.md`, and `ARCHITECTURE/` if they already exist.
 - Determine what already exists, what is missing, and what is nonstandard.
+- Identify behavior-based subsystem candidates and obvious mixed-ownership areas without moving code on the first pass unless requested.
 
 ## Preservation Rules
 
@@ -49,10 +50,13 @@ Create the four standard current architecture docs when reconstructing architect
 ## Architecture Recovery Rules
 
 - Use `references/architecture-structure.md` as the folder and file contract.
+- Use `references/subsystem-planning-rules.md` when reconstructing subsystem boundaries from existing code.
 - Create or normalize the top-level current docs first.
 - Create subsystem docs only for clearly justified bounded areas.
 - Prefer a thin but correct first-pass architecture set over speculative detail.
 - Use actual code and project docs as the source of truth when reconstructing missing architecture.
+- Map existing folders/files to proposed subsystem owners before planning moves.
+- Document temporary mixed ownership rather than forcing a large refactor during retrofit.
 
 ## Completion Criteria
 
@@ -60,6 +64,7 @@ A successful retrofit should leave the repo with:
 
 - standard WF tracking files or clearly normalized equivalents
 - a usable current architecture skeleton
+- a first-pass subsystem ownership map when the repo has meaningful behavior areas
 - a clean session-based `TODO.md`
 - a `LOG.md` structure that can record future sessions consistently
 - a brief summary of what was created, what was preserved, and what still needs follow-up
