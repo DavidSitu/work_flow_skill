@@ -10,6 +10,7 @@ Use this skill only when the user explicitly invokes `$wf` or clearly asks for t
 ## Core Defaults
 
 - Treat the `WF` workflow as per-turn project mode, not a permanent conversation mode.
+- Default to read-only catch-up, planning, or explanation unless the user explicitly asks to create, update, implement, refactor, normalize, retrofit, or otherwise change files.
 - Use `ARCHITECTURE/current/` as the canonical documentation set.
 - Do not read `ARCHITECTURE/archive/` unless the user explicitly asks for historical context, migration history, or past reasoning.
 - Read only the relevant docs and code for the task. Do not load the whole architecture tree by default.
