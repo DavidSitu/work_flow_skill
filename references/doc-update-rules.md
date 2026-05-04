@@ -22,10 +22,11 @@ Avoid too many tiny docs because they increase:
 
 ## Top-Level Docs
 
-- Use `ARCHITECTURE/current/01-project-intent.md` for project intent, constraints, phase, and compact milestone direction.
-- Use `ARCHITECTURE/current/02-overall-system-design.md` for system boundaries and architecture flow.
-- Use `ARCHITECTURE/current/03-overall-ui-design.md` for UI/UX architecture, or mark it `N/A` for projects without a UI.
-- Use `ARCHITECTURE/current/04-repo-map.md` for codebase layout and doc-to-code mapping.
+- Use `ARCHITECTURE/current/01-project-intent.md` for stable project target: goals, users, scope, non-goals, constraints, current phase, and success direction.
+- Use `ARCHITECTURE/current/02-milestones.md` for V0, V1, optional V1.x, optional V2+, roadmap direction, milestone direction, phase direction, and final-product direction.
+- Use `ARCHITECTURE/current/03-overall-system-design.md` for system boundaries and architecture flow.
+- Use `ARCHITECTURE/current/04-overall-ui-design.md` for UI/UX architecture, or mark it `N/A` for projects without a UI.
+- Use `ARCHITECTURE/current/05-repo-map.md` for codebase layout and doc-to-code mapping.
 - Add an ADR under `ARCHITECTURE/decisions/` only when a decision materially constrains future architecture work.
 
 ## Subsystem Docs
@@ -84,9 +85,10 @@ Split a subsystem when it has distinct ownership, state, data, dependencies, fai
 For a focused task, the ideal documentation read set is usually:
 
 - `01-project-intent.md` only if product intent matters
+- `02-milestones.md` only if roadmap, phase, milestone, or session planning depends on it
 - one relevant top-level doc
 - one relevant subsystem doc
-- `04-repo-map.md` only when code location is needed
+- `05-repo-map.md` only when code location is needed
 
 If a focused task keeps requiring many scattered top-level docs, move the detailed behavior into a subsystem doc instead of fragmenting the top-level set further.
 
@@ -95,6 +97,8 @@ If a focused task keeps requiring many scattered top-level docs, move the detail
 - Do not update `ARCHITECTURE/archive/` during normal current-state work.
 - Move a document into `archive/` only when it is no longer current but still valuable for history.
 - Consult `archive/` only for historical comparison, migration context, or explicit user requests.
+- During retrofit, merge still-current facts from old docs into the current docs before archiving useful historical material.
+- Do not blindly rename existing numbered architecture files unless the user asked for retrofit or normalization and references can be updated cleanly.
 
 ## Drift Handling
 

@@ -9,7 +9,7 @@ This is the WF session tracking standard. It is a lightweight repo-local convent
 - `TODO.md` is the active session queue.
 - `LOG.md` is the completed-session record.
 - ADRs under `ARCHITECTURE/decisions/` record architecture decisions, not session history.
-- Milestones are roadmap direction in `ARCHITECTURE/current/01-project-intent.md`, not TODO sessions.
+- Milestones are roadmap direction in `ARCHITECTURE/current/02-milestones.md`, not TODO sessions.
 
 ## TODO.md Format
 

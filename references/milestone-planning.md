@@ -17,9 +17,11 @@ Do not use milestone planning for every small architecture edit.
 
 ## Storage Location
 
-Store compact milestone summaries in `ARCHITECTURE/current/01-project-intent.md` under a `Milestones` or `Roadmap` section.
+Store compact milestone summaries in `ARCHITECTURE/current/02-milestones.md`.
 
-Do not create a separate `ARCHITECTURE/current/05-roadmap.md` in this version. Do not create `PRODUCT/`, business logic, promotion, go-to-market, or GTM docs as part of milestone planning.
+Keep `ARCHITECTURE/current/01-project-intent.md` limited to stable project target: goals, target users, scope, non-goals, constraints, current phase, and success direction.
+
+Do not create a separate `ARCHITECTURE/current/05-roadmap.md`. Do not create `PRODUCT/`, business logic, promotion, go-to-market, or GTM docs as part of milestone planning.
 
 ## Milestone Format
 
@@ -45,6 +47,8 @@ For each milestone, capture only:
 
 Keep milestone entries concise. Prefer 3-6 bullets per milestone over a long roadmap. If `V2+` exists, each major version should have a distinct outcome and acceptance signal.
 
+`02-milestones.md` may be very short for small projects. Do not fill it with speculative versions just because the file exists.
+
 ## Relationship To TODO.md
 
 Milestones guide session planning but do not belong in `TODO.md`.
@@ -60,5 +64,12 @@ Milestones guide session planning but do not belong in `TODO.md`.
 2. Draft `V0`, `V1`, optional `V1.x`, optional `V2+`, and `Final Product Direction` only as far as the user intent supports.
 3. Use `V2+` only for major capability jumps; otherwise keep the roadmap to `V0`, `V1`, optional `V1.x`, and `Final Product Direction`.
 4. Identify architecture implications before proposing subsystem or repo changes.
-5. Update `01-project-intent.md` when milestones become accepted project direction.
+5. Update `02-milestones.md` when milestones become accepted project direction.
 6. Create or update `TODO.md` only if the milestone plan turns into tracked implementation work.
+
+## Existing Repo Migration
+
+- If accepted milestone content already exists in `01-project-intent.md`, move it to `02-milestones.md` during retrofit or normalization.
+- Keep stable project target content in `01-project-intent.md`.
+- Do not move stale roadmap ideas into `02-milestones.md`; preserve or archive them only when they remain useful historical context.
+- Do not renumber existing architecture files unless the user asked for retrofit or normalization and the links can be updated cleanly.

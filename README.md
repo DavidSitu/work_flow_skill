@@ -105,7 +105,7 @@ use $wf and debug the current check-in flow
 
 ## Milestone Planning
 
-WF can keep compact milestone direction in `ARCHITECTURE/current/01-project-intent.md`:
+WF keeps stable project target content in `ARCHITECTURE/current/01-project-intent.md` and compact milestone direction in `ARCHITECTURE/current/02-milestones.md`:
 
 - `V0`: smallest useful proving version or internal prototype
 - `V1`: first coherent user-facing product version
@@ -114,6 +114,8 @@ WF can keep compact milestone direction in `ARCHITECTURE/current/01-project-inte
 - `Final Product Direction`: long-term north star, not a committed backlog
 
 Use the fewest milestone versions needed to make the roadmap clear. Milestones guide architecture and session planning. `TODO.md` should still contain only current and near-next executable sessions.
+
+`02-milestones.md` may stay very short for small projects. Its role is product and architecture phase direction, not backlog, GTM, business planning, or a second TODO file.
 
 ## Session Tracking
 
@@ -136,22 +138,26 @@ A subsystem should be large enough to test and reason about independently, but n
 
 The standard current architecture set is:
 
-- `ARCHITECTURE/README.md`: index, reading order, and folder meanings
-- `ARCHITECTURE/current/01-project-intent.md`: goals, users, scope, non-goals, constraints, phase, and compact milestone direction
-- `ARCHITECTURE/current/02-overall-system-design.md`: system boundaries, responsibilities, data flow, dependencies, and terminology
-- `ARCHITECTURE/current/03-overall-ui-design.md`: UI surfaces, navigation, key user flows, state relationships, and accessibility; may be marked `N/A`
-- `ARCHITECTURE/current/04-repo-map.md`: folder ownership, entrypoints, module responsibilities, and doc-to-code mapping
+- `ARCHITECTURE/README.md`: thin index, reading order, and folder meanings
+- `ARCHITECTURE/current/01-project-intent.md`: stable project target, goals, users, scope, non-goals, constraints, phase, and success direction
+- `ARCHITECTURE/current/02-milestones.md`: compact V0/V1/V1.x/V2+ and final-product direction when needed
+- `ARCHITECTURE/current/03-overall-system-design.md`: system boundaries, responsibilities, data flow, dependencies, and terminology
+- `ARCHITECTURE/current/04-overall-ui-design.md`: UI surfaces, navigation, key user flows, state relationships, and accessibility; may be marked `N/A`
+- `ARCHITECTURE/current/05-repo-map.md`: folder ownership, entrypoints, module responsibilities, and doc-to-code mapping
 - `ARCHITECTURE/current/subsystems/*.md`: bounded behavior docs using the subsystem template
 - `ARCHITECTURE/decisions/`: optional ADRs for important architecture decisions
 
 Subsystem docs should capture ownership, public entrypoints, internal files, import rules, data ownership, test strategy, known gaps, and safe extension points.
 
+`ARCHITECTURE/README.md` should remain navigation only. It should not duplicate project goals, milestone details, system design, subsystem behavior, or implementation TODOs.
+
 For a focused task, the ideal read set is usually:
 
 - `01-project-intent.md` only if product intent matters
+- `02-milestones.md` only if roadmap, phase, milestone, or session planning depends on it
 - one relevant top-level doc
 - one relevant subsystem doc
-- `04-repo-map.md` only when code location is needed
+- `05-repo-map.md` only when code location is needed
 
 If one task repeatedly needs many scattered top-level docs, consolidate the detailed behavior into a subsystem doc instead.
 

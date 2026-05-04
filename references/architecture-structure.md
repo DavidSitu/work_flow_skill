@@ -33,9 +33,10 @@ ARCHITECTURE/
 ├── README.md
 ├── current/
 │   ├── 01-project-intent.md
-│   ├── 02-overall-system-design.md
-│   ├── 03-overall-ui-design.md
-│   ├── 04-repo-map.md
+│   ├── 02-milestones.md
+│   ├── 03-overall-system-design.md
+│   ├── 04-overall-ui-design.md
+│   ├── 05-repo-map.md
 │   └── subsystems/
 │       ├── README.md
 │       └── <bounded-behavior>.md
@@ -47,11 +48,12 @@ ARCHITECTURE/
 
 ## Top-Level Files
 
-- `ARCHITECTURE/README.md`: index for the architecture set, recommended reading order, folder meanings, and links to current docs, subsystem docs, decisions, and archive when present.
-- `ARCHITECTURE/current/01-project-intent.md`: project goals, target users, scope, non-goals, key constraints, success direction, current phase, and compact roadmap or milestone direction when needed.
-- `ARCHITECTURE/current/02-overall-system-design.md`: system boundaries, subsystem responsibilities, data flow, external dependencies, backend/frontend ownership, deployment/runtime shape, and shared terminology.
-- `ARCHITECTURE/current/03-overall-ui-design.md`: UI surfaces, navigation, key user flows, state relationships, canonical UI patterns, and accessibility expectations. For backend-only, CLI-only, or library projects, keep the file and mark it `N/A` with a short reason.
-- `ARCHITECTURE/current/04-repo-map.md`: folder responsibilities, entrypoints, major modules, ownership boundaries, generated or external code notes, and doc-to-code mapping.
+- `ARCHITECTURE/README.md`: thin index for the architecture set, recommended reading order, folder meanings, and links to current docs, subsystem docs, decisions, and archive when present.
+- `ARCHITECTURE/current/01-project-intent.md`: stable project target: goals, target users, scope, non-goals, key constraints, success direction, and current phase.
+- `ARCHITECTURE/current/02-milestones.md`: compact product and architecture phase direction such as V0, V1, optional V1.x, optional V2+, and final-product direction. It is not a backlog, TODO file, ADR, business plan, GTM plan, or promotion plan.
+- `ARCHITECTURE/current/03-overall-system-design.md`: system boundaries, subsystem responsibilities, data flow, external dependencies, backend/frontend ownership, deployment/runtime shape, and shared terminology.
+- `ARCHITECTURE/current/04-overall-ui-design.md`: UI surfaces, navigation, key user flows, state relationships, canonical UI patterns, and accessibility expectations. For backend-only, CLI-only, or library projects, keep the file and mark it `N/A` with a short reason.
+- `ARCHITECTURE/current/05-repo-map.md`: folder responsibilities, entrypoints, major modules, ownership boundaries, generated or external code notes, and doc-to-code mapping.
 
 ## Subsystem Files
 
@@ -81,25 +83,35 @@ Create ADRs only for decisions future contributors would otherwise re-litigate o
 
 Use `references/milestone-planning.md` when `$wf arche` needs V0, V1, V1.x, optional V2+, roadmap, phase, or final-product direction.
 
-Keep milestone summaries compact inside `ARCHITECTURE/current/01-project-intent.md`. Milestones guide architecture and session planning, but they are not TODO sessions or ADRs.
+Keep milestone summaries compact inside `ARCHITECTURE/current/02-milestones.md`. Milestones guide architecture and session planning, but they are not TODO sessions or ADRs.
 
-Detailed business logic, promotion, go-to-market, GTM, or separate `PRODUCT/` docs are out of scope for this architecture standard version.
+Detailed business logic, promotion, go-to-market, GTM, separate `PRODUCT/` docs, or a separate `05-roadmap.md` are out of scope for this architecture standard version.
 
 ## Update Boundaries
 
-- Update `01-project-intent.md` when product goals, users, scope, non-goals, constraints, milestone direction, roadmap direction, or phase direction changes.
-- Update `02-overall-system-design.md` when system boundaries, ownership, data flow, dependencies, runtime shape, or shared terminology changes.
-- Update `03-overall-ui-design.md` when surfaces, navigation, key journeys, UI state rules, visual language, or accessibility expectations change.
-- Update `04-repo-map.md` when entrypoints, folder responsibilities, module ownership, generated code, or doc-to-code mapping changes.
+- Update `01-project-intent.md` when product goals, users, scope, non-goals, constraints, stable success direction, or current phase changes.
+- Update `02-milestones.md` when V0, V1, V1.x, V2+, roadmap direction, milestone direction, phase direction, or final-product direction changes.
+- Update `03-overall-system-design.md` when system boundaries, ownership, data flow, dependencies, runtime shape, or shared terminology changes.
+- Update `04-overall-ui-design.md` when surfaces, navigation, key journeys, UI state rules, visual language, or accessibility expectations change.
+- Update `05-repo-map.md` when entrypoints, folder responsibilities, module ownership, generated code, or doc-to-code mapping changes.
 - Update a subsystem doc when one bounded behavior area's flows, states, dependencies, code map, known gaps, or extension points change.
 - Add an ADR when the reason behind an architecture decision matters beyond the current session.
 
 ## Bootstrap And Retrofit Checklist
 
 - Create `ARCHITECTURE/README.md` and `ARCHITECTURE/current/`.
-- Create the four standard current docs. Mark `03-overall-ui-design.md` as `N/A` with a short reason when the project has no UI.
+- Create the standard current docs using the current numbering. Keep `02-milestones.md` thin when milestone direction is not yet known, and use it when the project has active phase planning.
+- Mark `04-overall-ui-design.md` as `N/A` with a short reason when the project has no UI.
 - Create `ARCHITECTURE/current/subsystems/README.md`.
 - Create subsystem docs only for clearly justified bounded behavior areas.
 - Create `ARCHITECTURE/decisions/` only when recording an actual ADR.
 - Create or preserve `ARCHITECTURE/archive/` only when historical docs exist or the user asks for archival structure.
 - Prefer thin, accurate first-pass docs over speculative detail.
+
+## Existing Repo Migration
+
+- For new WF bootstraps, use the current numbering.
+- For existing repos, do not blindly rename architecture files unless the user asks for retrofit or normalization.
+- If old milestone content exists in `01-project-intent.md`, move only accepted milestone direction into `02-milestones.md`; keep stable project target content in `01-project-intent.md`.
+- If existing `02-overall-system-design.md`, `03-overall-ui-design.md`, or `04-repo-map.md` exist, plan a safe rename to `03`, `04`, and `05` only when links and references can be updated cleanly.
+- If renaming would create churn, preserve existing filenames and document the local structure in `ARCHITECTURE/README.md`.

@@ -31,7 +31,7 @@ Ensure these exist when needed:
 
 Use `references/session-tracking.md` as the format contract for `TODO.md` and `LOG.md`.
 
-Create the four standard current architecture docs when reconstructing architecture. Mark `03-overall-ui-design.md` as `N/A` with a short reason for backend-only, CLI-only, or library projects. Create `ARCHITECTURE/decisions/` only when recording actual ADRs.
+Create the standard current architecture docs when reconstructing architecture. Use `02-milestones.md` for accepted milestone direction, or keep it thin when milestone direction is not yet known. Mark `04-overall-ui-design.md` as `N/A` with a short reason for backend-only, CLI-only, or library projects. Create `ARCHITECTURE/decisions/` only when recording actual ADRs.
 
 ## TODO Migration Rules
 
@@ -52,6 +52,10 @@ Create the four standard current architecture docs when reconstructing architect
 - Use `references/architecture-structure.md` as the folder and file contract.
 - Use `references/subsystem-planning-rules.md` when reconstructing subsystem boundaries from existing code.
 - Create or normalize the top-level current docs first.
+- If old milestone content exists in `01-project-intent.md`, move only accepted milestone direction into `02-milestones.md`; keep stable project target content in `01-project-intent.md`.
+- If existing `02-overall-system-design.md`, `03-overall-ui-design.md`, or `04-repo-map.md` exist, plan a safe rename to `03`, `04`, and `05` only when links and references can be updated cleanly.
+- If renaming would create churn, preserve existing filenames and document the local structure in `ARCHITECTURE/README.md`.
+- Merge still-current facts from old docs into the current docs before archiving useful historical material.
 - Create subsystem docs only for clearly justified bounded areas.
 - Prefer a thin but correct first-pass architecture set over speculative detail.
 - Use actual code and project docs as the source of truth when reconstructing missing architecture.

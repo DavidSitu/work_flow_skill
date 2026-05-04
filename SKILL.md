@@ -53,17 +53,19 @@ For real project work, read in this order when relevant:
 2. The latest relevant entries in `LOG.md`
 3. `ARCHITECTURE/README.md`
 4. `ARCHITECTURE/current/01-project-intent.md`
-5. Only the additional top-level or subsystem docs relevant to the task
-6. The actual code paths touched by the task
+5. `ARCHITECTURE/current/02-milestones.md` only when roadmap, phase, milestone, or session planning depends on it
+6. Only the additional top-level or subsystem docs relevant to the task
+7. The actual code paths touched by the task
 
 Skip files that do not exist or are not needed for the current path.
 
 For a focused task, the ideal read set is usually:
 
 - `ARCHITECTURE/current/01-project-intent.md` only if product intent matters
+- `ARCHITECTURE/current/02-milestones.md` only if roadmap, phase, milestone, or session planning depends on it
 - one relevant top-level current doc
 - one relevant subsystem doc
-- `ARCHITECTURE/current/04-repo-map.md` only when code location is needed
+- `ARCHITECTURE/current/05-repo-map.md` only when code location is needed
 
 If one task requires many scattered top-level docs, consolidate subsystem detail instead of multiplying cross-cutting files.
 
@@ -114,7 +116,8 @@ Use when the user wants to update architecture docs, plan the overall architectu
 - Use a planning-first workflow when architecture intent is unclear or the request involves major tradeoffs.
 - Clarify the architecture scope first: overall system, top-level docs, or one subsystem.
 - Confirm project goal, target users, scope, constraints, system type, current milestone, desired documentation depth, and whether ADRs are needed before creating or rewriting architecture docs.
-- Keep milestone summaries compact in `ARCHITECTURE/current/01-project-intent.md`.
+- Keep stable project target content in `ARCHITECTURE/current/01-project-intent.md`.
+- Keep milestone summaries compact in `ARCHITECTURE/current/02-milestones.md`.
 - Plan or revise subsystem boundaries and top-level architecture structure when needed.
 - For subsystem planning, define bounded behavior, owned code, public API, internal files, dependency direction, data ownership, and test strategy.
 - Update only the relevant architecture files.
