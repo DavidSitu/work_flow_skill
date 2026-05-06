@@ -1,6 +1,6 @@
 ---
 name: wf
-description: Explicit project-mode workflow for Codex. Use when bootstrapping a new project, retrofitting an existing repo into the workflow, catching up on an existing repo, updating architecture docs or milestones, planning tracked work, implementing scoped tasks, or reviewing/debugging within a repo while maintaining session-based TODO.md, LOG.md, and ARCHITECTURE/current/.
+description: Explicit $wf accepted-plan-to-repo workflow for Codex. Use only when the user invokes $wf or clearly asks for the WF project workflow to convert accepted product direction, rough function scope, and UI/design input into ARCHITECTURE/current/, milestones, subsystem docs, TODO.md/LOG.md sessions, retrofit/catch-up/review coordination, and code-manager handoff.
 ---
 
 # WF
@@ -11,6 +11,9 @@ Use this skill only when the user explicitly invokes `$wf` or clearly asks for t
 
 - Treat the `WF` workflow as per-turn project mode, not a permanent conversation mode.
 - Default to read-only catch-up, planning, or explanation unless the user explicitly asks to create, update, implement, refactor, normalize, retrofit, or otherwise change files.
+- Assume WF usually starts after the user has accepted the business direction, rough function scope, and UI/design direction. Convert that accepted input into repo-operational structure.
+- Clarify missing product, function, UI, or technical intent only when needed to write useful architecture docs, milestones, subsystem boundaries, or session plans.
+- Do not invent business strategy, go-to-market, PMF analysis, pricing, promotion plans, or raw product positioning unless the user explicitly asks for that outside normal WF.
 - Use `ARCHITECTURE/current/` as the canonical documentation set.
 - Do not read `ARCHITECTURE/archive/` unless the user explicitly asks for historical context, migration history, or past reasoning.
 - Read only the relevant docs and code for the task. Do not load the whole architecture tree by default.
@@ -22,16 +25,15 @@ Use this skill only when the user explicitly invokes `$wf` or clearly asks for t
 - Use the WF session tracking standard in `references/session-tracking.md` when creating, normalizing, or updating `TODO.md` and `LOG.md`.
 - Treat milestones as product and architecture direction, not execution sessions or a `TODO.md` backlog.
 - Build milestones through detailed TODO sessions. A milestone is complete only when the implementation sessions derived from it are finished, verified, and recorded.
-- Treat `$wf arche` as shorthand for architecture planning, lightweight milestone planning, and architecture updates.
+- Treat `$wf arche` as shorthand for converting accepted product/UI/function direction into architecture docs, lightweight milestone direction, and subsystem boundaries.
 - Treat `$wf retrofit` as shorthand for restoring or normalizing the standard WF structure in an existing repository.
-- Support the product-to-code SOP: manual product plan and strategy validation feed WF architecture docs; WF captures MVP/Post-MVP scope; UI design can be updated after external design assets or prompts; implementation proceeds through TODO sessions and code-manager-style execution.
 - When the user provides a whole idea document at WF startup, distill it into durable architecture docs instead of treating it as loose notes. Keep a rich cleaned version of accepted product intent in `01-project-intent.md`; do not store the raw full brief by default.
 - Use the standard architecture folder contract in `references/architecture-structure.md` when bootstrapping, retrofitting, or updating architecture docs.
 - Use a two-layer architecture doc model by default: top-level docs for cross-cutting truth, subsystem docs for bounded behavior.
 - Stop at subsystem-level by default. Do not split architecture into per-function docs unless a function is unusually critical or complex.
 - Treat a subsystem as a bounded behavior area that owns meaningful code, state, interfaces, dependencies, and tests.
 - Do not create subsystem docs per function, hook, widget, or UI page by default; a page or device capability becomes a subsystem only when it owns a real workflow or lifecycle.
-- Session size does not determine file size. Implement session work inside the correct subsystem or module; do not create one file per function or one file per checklist item.
+- Session size does not determine file size. Coordinate session work around the correct subsystem or module; do not create one file per function or one file per checklist item.
 - Use `references/subsystem-planning-rules.md` when planning subsystem boundaries, repo layout, import rules, test ownership, or subsystem-by-subsystem refactors.
 
 ## Request Classification
@@ -43,7 +45,7 @@ Classify the request first, then run only the relevant path:
 3. `catch-up-existing-project`
 4. `architecture-update`
 5. `planning`
-6. `implementation`
+6. `implementation-coordination`
 7. `review-debugging`
 
 Treat `$wf retrofit` as shorthand for `retrofit-existing-project`.
@@ -123,17 +125,17 @@ Use when the user asks to review the current state, catch up on a repo, or under
 
 ### architecture-update
 
-Use when the user wants to update architecture docs, plan the overall architecture, plan MVP/V1, Post-MVP/V1.x, optional Future/V2+, and final-product milestones, or clarify subsystem boundaries.
+Use when the user wants to convert accepted product direction, rough function scope, UI/design input, or current repo truth into architecture docs, milestone direction, or subsystem boundaries.
 
 - Read only the affected current docs.
 - Use Global Arche Read when the request is broad: global view, overall architecture, whole project direction, MVP plan, final product direction, repo structure, or broad subsystem boundaries.
 - Read `references/architecture-structure.md` for the standard file roles and folder contract.
 - Read `references/subsystem-planning-rules.md` when the request involves subsystem granularity, code ownership, test boundaries, import direction, or repo layout.
-- Read `references/milestone-planning.md` when product direction is unclear or the user asks for MVP, V1, Post-MVP, V1.x, optional Future/V2+, roadmap, milestone, or final-product plan.
+- Read `references/milestone-planning.md` when accepted direction includes MVP / V1, Post-MVP / V1.x, optional Future / V2+, roadmap, milestone, phase, or final-product direction.
 - Inspect code if needed to confirm runtime truth.
 - Use a planning-first workflow when architecture intent is unclear or the request involves major tradeoffs.
 - Clarify the architecture scope first: overall system, top-level docs, or one subsystem.
-- Confirm project goal, target users, scope, constraints, system type, current milestone, desired documentation depth, and whether ADRs are needed before creating or rewriting architecture docs.
+- Confirm only missing project goal, target users, scope, constraints, system type, current milestone, desired documentation depth, or ADR needs that cannot be learned from the provided plan, current docs, or code.
 - If the user provides an initial idea document, preserve rich accepted product intent in `ARCHITECTURE/current/01-project-intent.md` and distribute the rest into `02-05` by responsibility.
 - Keep stable project target content, target customer, core problem, value proposition, product principles, constraints, and success direction in `ARCHITECTURE/current/01-project-intent.md`.
 - Keep milestone summaries compact in `ARCHITECTURE/current/02-milestones.md`; MVP scope may include user journey flow, page-level capabilities, required buttons/controls, required states, and acceptance signals.
@@ -160,17 +162,18 @@ Use when the user asks for task planning, breakdown, or sequencing.
 
 See `references/planning-rules.md` for task slicing and review guidance.
 
-### implementation
+### implementation-coordination
 
-Use when the user asks to build or change a concrete behavior.
+Use when the user asks `$wf` to build or change a concrete behavior. WF coordinates the tracked session; detailed code execution discipline belongs to code-manager guidance.
 
 - Read the relevant docs and code first.
-- Identify the affected subsystem and its public/internal entrypoints before editing when the change is more than a trivial local fix.
+- Identify the affected subsystem, session scope, relevant public/internal entrypoints, and verification target before coding work starts when the change is more than a trivial local fix.
 - Refine task tracking only if the task is real project work.
 - If the task is too large for one focused session, split it into the next session entries in `TODO.md`.
-- Implement only what the current session needs.
-- Keep imports, tests, and data access aligned with documented subsystem ownership unless the current task is explicitly changing those boundaries.
-- Run the smallest useful verification, preferring subsystem-local tests before broader integration tests.
+- Coordinate only what the current session needs; avoid expanding the work into a backlog or unrelated refactor.
+- Read `references/code-manager-integration.md` when the task needs file organization, import cleanup, public API design, test placement, TDD, diagnosis, refactoring, or focused code verification.
+- Keep docs and session tracking aligned with the code-manager/subsystem contract instead of duplicating full coding rules in WF.
+- Define the smallest useful verification, preferring subsystem-local tests before broader integration tests.
 - Read `references/session-tracking.md` before moving session outcomes from `TODO.md` to `LOG.md`.
 - Update `LOG.md` using the same date and session ID when a session is completed or reaches a meaningful stopping point.
 
@@ -187,11 +190,10 @@ Use when the user asks for review, diagnosis, or debugging.
 
 - Read `references/planning-rules.md` when planning or reviewing task slices.
 - Read `references/session-tracking.md` when creating, normalizing, or updating `TODO.md` and `LOG.md`.
-- Read `references/milestone-planning.md` when planning MVP/V1, Post-MVP/V1.x, optional Future/V2+, final-product direction, or roadmap-like architecture direction.
+- Read `references/milestone-planning.md` when translating accepted MVP / V1, Post-MVP / V1.x, optional Future / V2+, final-product direction, or roadmap-like architecture direction.
 - Read `references/retrofit-rules.md` when handling `$wf retrofit` or normalizing an existing repo into the WF structure.
 - Read `references/architecture-structure.md` when creating, normalizing, or updating `ARCHITECTURE/`.
 - Read `references/doc-update-rules.md` when deciding which architecture doc to update.
 - Read `references/subsystem-doc-template.md` when creating a new subsystem doc.
 - Read `references/subsystem-planning-rules.md` when defining subsystem granularity, code ownership, import rules, test strategy, or refactor sequencing.
-- Read `references/code-manager-integration.md` when implementation work needs physical file organization, file moves, import cleanup, test placement, TDD, diagnosis loops, or structured refactor execution.
-- Read `references/code-manager-skill-blueprint.md` only when designing or creating the separate `code-manager` skill.
+- Read `references/code-manager-integration.md` when implementation coordination needs physical file organization, file moves, import cleanup, public API design, test placement, TDD, diagnosis loops, focused verification, or structured refactor execution.

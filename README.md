@@ -1,6 +1,6 @@
 # WF
 
-`WF` is an explicit project-mode skill for Codex. It is designed for repository work that needs structured catch-up, retrofit, planning, architecture maintenance, implementation discipline, and lightweight tracking without making that workflow always-on.
+`WF` is an explicit accepted-plan-to-repo skill for Codex. It is designed for repository work that needs structured catch-up, retrofit, architecture maintenance, milestone/session planning, implementation coordination, and lightweight tracking without making that workflow always-on.
 
 The explicit trigger is `$wf`.
 
@@ -14,15 +14,24 @@ Use it when you want Codex to:
 - retrofit an existing repo into the standard WF structure
 - catch up on an existing repo
 - update architecture docs or plan the overall architecture
-- plan lightweight V0/V1/optional V2+/final-product milestones during architecture work
+- translate accepted MVP/V1/Post-MVP/Future/final-product direction into architecture milestones
 - plan subsystem-first code organization, import boundaries, and test ownership
 - plan tracked work
-- implement scoped changes
+- coordinate scoped implementation sessions
 - review or debug current behavior
 
 ## Install
 
-Copy this folder to:
+This README is source-repo documentation. Do not include it in the installed skill payload.
+
+Install only the skill payload files:
+
+- `SKILL.md`
+- `agents/openai.yaml`
+- `references/`
+- optional `assets/` or `scripts/` if added later
+
+Copy those payload files to:
 
 ```text
 ~/.codex/skills/wf/
@@ -82,7 +91,7 @@ use $wf and debug the current check-in flow
 - reads only the relevant docs and code for the task
 - can restore or normalize `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` in an existing repo when asked
 - uses a standard architecture folder contract for project intent, system design, UI design, repo mapping, subsystem docs, and optional ADRs
-- can plan compact V0/V1/V1.x/optional V2+/final-product milestones as architecture direction
+- can translate compact MVP/V1, Post-MVP/V1.x, optional Future/V2+, and final-product direction into architecture milestones
 - treats subsystems as bounded behavior areas that own code, state, public interfaces, dependencies, and tests
 - avoids creating subsystem docs for every function, hook, widget, helper, or UI page by default
 - supports subsystem-by-subsystem refactor planning with public APIs, import rules, and local verification
@@ -101,16 +110,15 @@ use $wf and debug the current check-in flow
 - it does not encourage per-function architecture docs by default
 - it does not make every UI page, component, hook, helper, or device button its own subsystem unless it owns meaningful workflow, lifecycle, state, data, dependencies, and tests
 
-`$wf arche` is the shorthand for architecture planning, lightweight milestone planning, and architecture updates. It should be planning-first when architecture direction is unclear, and direct-edit when the requested architecture change is already clear. Use `$wf arche` to plan V1, optional V2+, and final-product milestones when product direction affects architecture. Use `$wf retrofit` to adopt the WF structure in an existing project by creating or normalizing `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` without treating the repo as a brand-new project.
+`$wf arche` is the shorthand for converting accepted product, function, and UI direction into architecture docs, lightweight milestone direction, and subsystem boundaries. It should be planning-first when architecture direction is unclear, and direct-edit when the requested architecture change is already clear. Use `$wf retrofit` to adopt the WF structure in an existing project by creating or normalizing `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` without treating the repo as a brand-new project.
 
 ## Milestone Planning
 
 WF keeps stable project target content in `ARCHITECTURE/current/01-project-intent.md` and compact milestone direction in `ARCHITECTURE/current/02-milestones.md`:
 
-- `V0`: smallest useful proving version or internal prototype
-- `V1`: first coherent user-facing product version
-- `V1.x`: near-term post-V1 improvements that should not block V1
-- `V2`, `V3`, `V4+`: larger product generations used only for meaningful capability jumps
+- `MVP / V1`: first coherent user-facing product version or smallest value-proving version
+- `Post-MVP / V1.x`: near-term post-V1 improvements that should not block V1
+- `Future / V2+`: larger product generations used only for meaningful capability jumps
 - `Final Product Direction`: long-term north star, not a committed backlog
 
 Use the fewest milestone versions needed to make the roadmap clear. Milestones guide architecture and session planning. `TODO.md` should still contain only current and near-next executable sessions.
@@ -155,7 +163,7 @@ The standard current architecture set is:
 
 - `ARCHITECTURE/README.md`: thin index, reading order, and folder meanings
 - `ARCHITECTURE/current/01-project-intent.md`: stable project target, goals, users, scope, non-goals, constraints, phase, and success direction
-- `ARCHITECTURE/current/02-milestones.md`: compact V0/V1/V1.x/V2+ and final-product direction when needed
+- `ARCHITECTURE/current/02-milestones.md`: compact MVP/V1, Post-MVP/V1.x, optional Future/V2+, and final-product direction when needed
 - `ARCHITECTURE/current/03-overall-system-design.md`: system boundaries, responsibilities, data flow, dependencies, and terminology
 - `ARCHITECTURE/current/04-overall-ui-design.md`: UI surfaces, navigation, key user flows, state relationships, and accessibility; may be marked `N/A`
 - `ARCHITECTURE/current/05-repo-map.md`: folder ownership, entrypoints, module responsibilities, and doc-to-code mapping

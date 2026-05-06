@@ -1,6 +1,6 @@
 # Code Manager Integration
 
-Use this reference when `$wf` implementation work needs detailed code organization or refactor execution.
+Use this reference when `$wf` implementation coordination needs detailed code organization or refactor execution.
 
 `$wf` owns project workflow and memory:
 

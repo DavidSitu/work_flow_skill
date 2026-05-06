@@ -31,7 +31,8 @@ Avoid too many tiny docs because they increase:
 
 ## Product And UI Routing
 
-- Initial idea document: distill accepted product truth into `01-05`; keep rich cleaned product intent in `01`; do not store the raw full brief by default.
+- Accepted product/function/UI input: distill accepted project truth into `01-05`; keep rich cleaned product intent in `01`; do not store the raw full brief by default.
+- Do not create business strategy, GTM, PMF analysis, pricing, or promotion docs during normal WF architecture updates.
 - Product idea, product-market-fit hypothesis, target customer, user motivation, product principles, scope, and non-scope belong in `01`.
 - MVP/Post-MVP functional scope, MVP user journey, required pages, page logic, buttons/controls, required states, and acceptance signals belong in `02`.
 - System boundaries, data flow, integrations, runtime shape, and subsystem responsibilities belong in `03`.

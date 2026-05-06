@@ -1,15 +1,15 @@
 # Planning Rules
 
-Use these rules when `$WF` is handling planning, review, or scoped implementation work.
+Use these rules when `$wf` is handling planning, review, or scoped implementation coordination.
 
 Use `references/session-tracking.md` for the canonical `TODO.md` and `LOG.md` formats.
-Use `references/milestone-planning.md` when a plan depends on V0, V1, V1.x, optional V2+, roadmap, phase, or final-product direction.
+Use `references/milestone-planning.md` when a plan depends on MVP / V1, Post-MVP / V1.x, optional Future / V2+, roadmap, phase, or final-product direction.
 Use `references/subsystem-planning-rules.md` when a plan involves code ownership, subsystem boundaries, import direction, test ownership, or subsystem-by-subsystem refactoring.
 
 ## Task Slicing
 
 - Prefer session-sized tasks that affect one subsystem or one clear behavior.
-- Prefer one subsystem or one named cross-subsystem integration per implementation session.
+- Prefer one subsystem or one named cross-subsystem integration per implementation-coordination session.
 - Each session should be small enough to complete in one focused pass.
 - Each session should have an obvious verification step.
 - If a task spans multiple systems or sittings, split it into sequenced sessions whenever possible.

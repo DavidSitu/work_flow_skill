@@ -1,6 +1,6 @@
 # Milestone Planning
 
-Use this reference when `$wf arche` needs lightweight roadmap or milestone planning.
+Use this reference when `$wf arche` needs to translate accepted roadmap, milestone, or product phase direction into compact architecture guidance.
 
 Milestones are product and architecture direction. They are not execution sessions, TODO entries, ADRs, or business/promotion plans.
 
@@ -8,12 +8,12 @@ Milestones are product and architecture direction. They are not execution sessio
 
 Use milestone planning when:
 
-- product direction is unclear during `$wf arche`
-- the user asks for MVP, V1, Post-MVP, V1.x, Future, V2+, roadmap, milestones, phases, or final-product direction
+- accepted product direction includes MVP / V1, Post-MVP / V1.x, Future / V2+, roadmap, milestones, phases, or final-product direction
+- the user asks WF to convert rough function scope or UI/user-flow direction into milestone architecture guidance
 - architecture choices depend on the intended product phase
 - a large request needs a roadmap before it can be split into sessions
 
-Do not use milestone planning for every small architecture edit.
+Do not use milestone planning for every small architecture edit, and do not invent product strategy when accepted direction is missing. Ask for the missing direction or keep `02-milestones.md` thin.
 
 ## Storage Location
 
@@ -34,7 +34,7 @@ Use the fewest milestone labels needed to make the roadmap clear. Prefer the use
 - `Future / V2+`: larger product generations added only when each version represents a meaningful capability jump toward the final goal
 - `Final Product Direction`: the long-term north star, not a committed backlog
 
-Older or prototype-heavy projects may still use `V0 -> V1 -> optional V1.x -> optional V2+ -> Final Product Direction`. Do not rename existing accepted labels unless the user asks for normalization.
+Existing or prototype-heavy projects may still use `V0 -> V1 -> optional V1.x -> optional V2+ -> Final Product Direction`. Treat `V0` as compatibility vocabulary only. Do not rename existing accepted labels unless the user asks for normalization.
 
 Do not force `Future / V2+`. Add major versions only when the final goal is too complex for MVP plus Post-MVP. Use Post-MVP/V1.x for incremental improvements and Future/V2+ for distinct product generations.
 
@@ -82,8 +82,8 @@ LOG = completion record for the verified session
 
 ## Planning Flow
 
-1. Confirm the product goal, target users, scope, non-goals, constraints, and current phase.
-2. Draft `MVP / V1`, `Post-MVP / V1.x`, optional `Future / V2+`, and `Final Product Direction` only as far as the user intent supports.
+1. Confirm only missing product goal, target users, scope, non-goals, constraints, and current phase that are not already present in the accepted input.
+2. Draft `MVP / V1`, `Post-MVP / V1.x`, optional `Future / V2+`, and `Final Product Direction` only as far as the accepted input supports.
 3. For MVP, include user journey and page capability scope when the product has pages or UI surfaces.
 4. Use `Future / V2+` only for major capability jumps; otherwise keep the roadmap to MVP, Post-MVP, and Final Product Direction.
 5. Identify architecture implications before proposing subsystem or repo changes.

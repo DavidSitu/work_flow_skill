@@ -13,11 +13,12 @@ Reference anchors:
 
 ## Planning-First Architecture
 
-For `$wf arche`, first determine whether the user wants exploration, an architecture plan, or direct documentation edits.
+For `$wf arche`, first determine whether the user wants exploration, an architecture plan, or direct documentation edits from accepted product, function, or UI direction.
 
 - Ask only for missing intent that cannot be learned from existing docs or code.
 - Use current code and current docs as runtime truth for what exists now.
-- Treat product direction, scope, constraints, tradeoffs, and target users as user intent.
+- Treat provided product direction, rough function scope, UI/design input, constraints, tradeoffs, and target users as accepted user intent unless the user asks to challenge it.
+- Do not invent business strategy, GTM, PMF analysis, pricing, promotion plans, or raw product positioning as part of normal WF architecture work.
 - When architecture intent is unclear, clarify project goal, target users, in-scope and out-of-scope areas, constraints, system type, desired documentation depth, and whether ADRs are needed before writing docs.
 - When the user asks for global view, overall architecture, whole project direction, MVP planning, final product direction, repo structure, or broad subsystem boundaries, read broadly across the relevant `ARCHITECTURE/current/` docs. Do not use a hard file cap for broad architecture work.
 - When the user asks for MVP/V1, Post-MVP/V1.x, Future/V2+, roadmap, milestones, phases, or final-product direction, use `references/milestone-planning.md`.
@@ -89,15 +90,15 @@ Keep milestone summaries compact inside `ARCHITECTURE/current/02-milestones.md`.
 
 Detailed business logic, promotion, go-to-market, GTM, separate `PRODUCT/` docs, or a separate `05-roadmap.md` are out of scope for this architecture standard version.
 
-## Product-To-Code SOP
+## Accepted-Plan-To-Repo SOP
 
 WF supports this sequence without adding new commands:
 
-1. The user does manual product planning: product-market-fit hypothesis, target customer, and user journey flow.
-2. The user or another reasoning pass validates business logic and accepted direction.
-3. WF initializes or updates architecture docs, keeping rich accepted intent in `01` and MVP/Post-MVP function scope in `02`.
-4. UI design may happen outside the codebase or through a stronger prompt; when the user returns with screenshots, images, or UI prompts, update `04`.
-5. Implementation planning turns accepted MVP scope into session-sized `TODO.md` entries, then code work follows subsystem/module ownership.
+1. The user arrives with accepted business/product direction, rough function scope, and UI/design direction when available.
+2. WF initializes or updates architecture docs, keeping rich accepted intent in `01`, milestone/function scope in `02`, system shape in `03`, UI/design direction in `04`, and repo mapping in `05`.
+3. WF turns accepted milestone scope into session-sized `TODO.md` entries.
+4. Code-manager guidance owns detailed code organization, imports, public APIs, tests, refactors, and implementation loops.
+5. WF records completed outcomes in `LOG.md` and updates docs only when project truth changes.
 
 ## Update Boundaries
 
