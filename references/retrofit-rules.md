@@ -1,10 +1,10 @@
 # Retrofit Rules
 
-Use these rules when `$WF` is asked to adopt or restore the workflow in an existing repository, especially via `$wf retrofit`.
+Use these rules when `$po` is asked to adopt or restore the Project Orchestrator workflow in an existing repository, especially via `$po retrofit`.
 
 ## Goal
 
-Bring an existing repository into the standard WF structure without treating it like a brand-new project and without overwriting useful existing material.
+Bring an existing repository into the standard Project Orchestrator structure without treating it like a brand-new project and without overwriting useful existing material.
 
 ## First Pass Inspection
 
@@ -21,7 +21,7 @@ Bring an existing repository into the standard WF structure without treating it 
 - Prefer migrating or reshaping existing tracking and docs over deleting and recreating them.
 - If old structure is unclear or mixed-quality, preserve it conservatively and summarize the tradeoffs.
 
-## Standard WF Structure
+## Standard Project Orchestrator Structure
 
 Ensure these exist when needed:
 
@@ -66,7 +66,7 @@ Create the standard current architecture docs when reconstructing architecture. 
 
 A successful retrofit should leave the repo with:
 
-- standard WF tracking files or clearly normalized equivalents
+- standard Project Orchestrator tracking files or clearly normalized equivalents
 - a usable current architecture skeleton
 - a first-pass subsystem ownership map when the repo has meaningful behavior areas
 - a clean session-based `TODO.md`

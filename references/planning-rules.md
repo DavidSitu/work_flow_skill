@@ -1,6 +1,6 @@
 # Planning Rules
 
-Use these rules when `$wf` is handling planning, review, or scoped implementation coordination.
+Use these rules when `$po` is handling planning, review, or scoped implementation coordination.
 
 Use `references/session-tracking.md` for the canonical `TODO.md` and `LOG.md` formats.
 Use `references/milestone-planning.md` when a plan depends on MVP / V1, Post-MVP / V1.x, optional Future / V2+, roadmap, phase, or final-product direction.

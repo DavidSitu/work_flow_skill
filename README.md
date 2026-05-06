@@ -1,8 +1,8 @@
-# WF
+# Project Orchestrator
 
-`WF` is an explicit accepted-plan-to-repo skill for Codex. It is designed for repository work that needs structured catch-up, retrofit, architecture maintenance, milestone/session planning, implementation coordination, and lightweight tracking without making that workflow always-on.
+`Project Orchestrator` is an explicit accepted-plan-to-repo skill for Codex. It is designed for repository work that needs structured catch-up, retrofit, architecture maintenance, milestone/session planning, implementation coordination, and lightweight tracking without making that workflow always-on.
 
-The explicit trigger is `$wf`.
+The explicit trigger is `$po`.
 
 ## Why It Exists
 
@@ -11,7 +11,7 @@ This skill keeps normal chat and writing unstructured by default, then adds a pr
 Use it when you want Codex to:
 
 - bootstrap docs and tracking for a new project
-- retrofit an existing repo into the standard WF structure
+- retrofit an existing repo into the standard Project Orchestrator structure
 - catch up on an existing repo
 - update architecture docs or plan the overall architecture
 - translate accepted MVP/V1/Post-MVP/Future/final-product direction into architecture milestones
@@ -34,55 +34,55 @@ Install only the skill payload files:
 Copy those payload files to:
 
 ```text
-~/.codex/skills/wf/
+~/.codex/skills/po/
 ```
 
-The internal skill name is lowercase `wf` for validator compatibility. The UI display name can still appear as `WF`.
+The internal skill name is lowercase `po` for validator compatibility. The UI display name can appear as `Project Orchestrator`.
 
 ## Usage
 
 Examples:
 
 ```text
-use $wf, I'm starting a new project for ...
-use $wf retrofit
-use $wf arche
-use $wf arche and plan the V1 milestones
-use $wf arche and split the final goal into V1/V2 milestones
-use $wf and review this repo
-use $wf and split this into sessions
-use $wf and plan feature X
-use $wf arche and plan the overall architecture
-use $wf and update the architecture for subsystem Y
-use $wf and debug the current check-in flow
+use $po, I'm starting a new project for ...
+use $po retrofit
+use $po arche
+use $po arche and plan the V1 milestones
+use $po arche and split the final goal into V1/V2 milestones
+use $po and review this repo
+use $po and split this into sessions
+use $po and plan feature X
+use $po arche and plan the overall architecture
+use $po and update the architecture for subsystem Y
+use $po and debug the current check-in flow
 ```
 
 ## Common Use Cases
 
 - New project bootstrap
-  - `use $wf, I'm starting a new project for ...`
+  - `use $po, I'm starting a new project for ...`
 - Existing project retrofit
-  - `use $wf retrofit`
-  - `use $wf retrofit this repo`
+  - `use $po retrofit`
+  - `use $po retrofit this repo`
 - Existing project catch-up
-  - `use $wf and review this repo`
-  - `use $wf and catch me up on this project`
+  - `use $po and review this repo`
+  - `use $po and catch me up on this project`
 - Planning
-  - `use $wf and plan feature X`
-  - `use $wf and break this into tasks`
+  - `use $po and plan feature X`
+  - `use $po and break this into tasks`
 - Implementation
-  - `use $wf and implement feature X`
-  - `use $wf and fix bug Y`
+  - `use $po and implement feature X`
+  - `use $po and fix bug Y`
 - Architecture updates
-  - `use $wf arche`
-  - `use $wf arche and plan the overall architecture`
-  - `use $wf arche and plan the V1 milestones`
-  - `use $wf arche and split the final goal into V1/V2 milestones`
-  - `use $wf and update the architecture for subsystem Y`
-  - `use $wf and document this repo structure`
+  - `use $po arche`
+  - `use $po arche and plan the overall architecture`
+  - `use $po arche and plan the V1 milestones`
+  - `use $po arche and split the final goal into V1/V2 milestones`
+  - `use $po and update the architecture for subsystem Y`
+  - `use $po and document this repo structure`
 - Review and debugging
-  - `use $wf and review this change`
-  - `use $wf and debug the current check-in flow`
+  - `use $po and review this change`
+  - `use $po and debug the current check-in flow`
 
 ## What It Does
 
@@ -95,7 +95,7 @@ use $wf and debug the current check-in flow
 - treats subsystems as bounded behavior areas that own code, state, public interfaces, dependencies, and tests
 - avoids creating subsystem docs for every function, hook, widget, helper, or UI page by default
 - supports subsystem-by-subsystem refactor planning with public APIs, import rules, and local verification
-- uses `TODO.md` and `LOG.md` as the WF session tracking standard for current work, completed sessions, and handoff notes
+- uses `TODO.md` and `LOG.md` as the Project Orchestrator session tracking standard for current work, completed sessions, and handoff notes
 - prefers subsystem-level architecture docs over overly fragmented micro-docs
 
 ## What It Does Not Do
@@ -106,15 +106,15 @@ use $wf and debug the current check-in flow
 - it does not turn `TODO.md` into a long backlog
 - it does not store full roadmaps in `TODO.md`
 - it does not create business, promotion, GTM, `PRODUCT/`, or `05-roadmap.md` docs in the current version
-- it does not treat `TODO.md` or `LOG.md` as an industry standard; they are WF's lightweight repo-local tracking convention
+- it does not treat `TODO.md` or `LOG.md` as an industry standard; they are Project Orchestrator's lightweight repo-local tracking convention
 - it does not encourage per-function architecture docs by default
 - it does not make every UI page, component, hook, helper, or device button its own subsystem unless it owns meaningful workflow, lifecycle, state, data, dependencies, and tests
 
-`$wf arche` is the shorthand for converting accepted product, function, and UI direction into architecture docs, lightweight milestone direction, and subsystem boundaries. It should be planning-first when architecture direction is unclear, and direct-edit when the requested architecture change is already clear. Use `$wf retrofit` to adopt the WF structure in an existing project by creating or normalizing `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` without treating the repo as a brand-new project.
+`$po arche` is the shorthand for converting accepted product, function, and UI direction into architecture docs, lightweight milestone direction, and subsystem boundaries. It should be planning-first when architecture direction is unclear, and direct-edit when the requested architecture change is already clear. Use `$po retrofit` to adopt the Project Orchestrator structure in an existing project by creating or normalizing `TODO.md`, `LOG.md`, and `ARCHITECTURE/current/` without treating the repo as a brand-new project.
 
 ## Milestone Planning
 
-WF keeps stable project target content in `ARCHITECTURE/current/01-project-intent.md` and compact milestone direction in `ARCHITECTURE/current/02-milestones.md`:
+Project Orchestrator keeps stable project target content in `ARCHITECTURE/current/01-project-intent.md` and compact milestone direction in `ARCHITECTURE/current/02-milestones.md`:
 
 - `MVP / V1`: first coherent user-facing product version or smallest value-proving version
 - `Post-MVP / V1.x`: near-term post-V1 improvements that should not block V1
@@ -142,7 +142,7 @@ Build milestones through detailed TODO sessions, but organize code by ownership 
 
 ## Session Tracking
 
-WF uses a session tracking convention for agent work:
+Project Orchestrator uses a session tracking convention for agent work:
 
 - `TODO.md` is the active session queue, organized by `YYYY-MM-DD` and `S1`, `S2`, `S3` session headings.
 - `LOG.md` is the completed-session record, using the same dates and session IDs with concise outcome summaries.

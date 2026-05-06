@@ -1,6 +1,6 @@
 # Milestone Planning
 
-Use this reference when `$wf arche` needs to translate accepted roadmap, milestone, or product phase direction into compact architecture guidance.
+Use this reference when `$po arche` needs to translate accepted roadmap, milestone, or product phase direction into compact architecture guidance.
 
 Milestones are product and architecture direction. They are not execution sessions, TODO entries, ADRs, or business/promotion plans.
 
@@ -9,7 +9,7 @@ Milestones are product and architecture direction. They are not execution sessio
 Use milestone planning when:
 
 - accepted product direction includes MVP / V1, Post-MVP / V1.x, Future / V2+, roadmap, milestones, phases, or final-product direction
-- the user asks WF to convert rough function scope or UI/user-flow direction into milestone architecture guidance
+- the user asks Project Orchestrator to convert rough function scope or UI/user-flow direction into milestone architecture guidance
 - architecture choices depend on the intended product phase
 - a large request needs a roadmap before it can be split into sessions
 
@@ -25,7 +25,7 @@ Do not create a separate `ARCHITECTURE/current/05-roadmap.md`. Do not create `PR
 
 ## Milestone Format
 
-Use the fewest milestone labels needed to make the roadmap clear. Prefer the user's existing vocabulary. For new WF projects, default to combined product/version labels:
+Use the fewest milestone labels needed to make the roadmap clear. Prefer the user's existing vocabulary. For new Project Orchestrator projects, default to combined product/version labels:
 
 `MVP / V1 -> Post-MVP / V1.x -> optional Future / V2+ -> Final Product Direction`
 

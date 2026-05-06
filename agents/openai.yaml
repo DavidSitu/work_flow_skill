@@ -1,8 +1,8 @@
 interface:
-  display_name: "WF"
+  display_name: "Project Orchestrator"
   short_description: "Repo workflow, architecture, and session tracking"
   brand_color: "#0F766E"
-  default_prompt: "Use $wf to convert accepted product, function, and UI direction into architecture docs, milestones, subsystem boundaries, and tracked sessions."
+  default_prompt: "Use $po to convert accepted product, function, and UI direction into architecture docs, milestones, subsystem boundaries, and tracked sessions."
 
 policy:
   allow_implicit_invocation: false

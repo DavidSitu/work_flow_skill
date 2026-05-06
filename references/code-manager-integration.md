@@ -1,8 +1,8 @@
 # Code Manager Integration
 
-Use this reference when `$wf` implementation coordination needs detailed code organization or refactor execution.
+Use this reference when `$po` implementation coordination needs detailed code organization or refactor execution.
 
-`$wf` owns project workflow and memory:
+`$po` owns project workflow and memory:
 
 - active session selection
 - `TODO.md` and `LOG.md`
@@ -24,9 +24,9 @@ The future separate `code-manager` skill should own coding execution details:
 - safe file moves and large-file splits
 - focused verification
 
-## When WF Should Hand Off
+## When Project Orchestrator Should Hand Off
 
-Use or suggest `code-manager` when a `$wf` task involves:
+Use or suggest `code-manager` when a `$po` task involves:
 
 - moving or splitting code files
 - organizing code by subsystem
@@ -40,7 +40,7 @@ Use or suggest `code-manager` when a `$wf` task involves:
 
 ## Shared Contract
 
-WF subsystem docs define the contract.
+Project Orchestrator subsystem docs define the contract.
 
 Code layout implements the contract.
 
@@ -52,12 +52,12 @@ Do not create one file per function or one file per checklist item. Split files 
 
 The intended flow:
 
-1. `$wf` identifies the active milestone when relevant.
-2. `$wf` derives or selects the current TODO session.
-3. `$wf` identifies the affected subsystem.
+1. `$po` identifies the active milestone when relevant.
+2. `$po` derives or selects the current TODO session.
+3. `$po` identifies the affected subsystem.
 4. `code-manager` aligns files, imports, public APIs, and tests to that subsystem contract.
 5. `code-manager` implements the session inside the correct module boundaries.
 6. `code-manager` verifies the session outcome.
-7. `$wf` records completed outcomes and updates docs only when project truth changes.
+7. `$po` records completed outcomes and updates docs only when project truth changes.
 
-Do not duplicate the full code-manager rules inside WF. Keep WF focused on planning, architecture truth, and session tracking.
+Do not duplicate the full code-manager rules inside Project Orchestrator. Keep Project Orchestrator focused on planning, architecture truth, and session tracking.

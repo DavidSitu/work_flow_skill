@@ -2,7 +2,7 @@
 
 Use this reference when creating, normalizing, or updating `TODO.md` and `LOG.md`.
 
-This is the WF session tracking standard. It is a lightweight repo-local convention optimized for agent work, not a universal industry standard.
+This is the Project Orchestrator session tracking standard. It is a lightweight repo-local convention optimized for agent work, not a universal industry standard.
 
 ## File Roles
 

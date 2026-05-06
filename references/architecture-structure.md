@@ -2,7 +2,7 @@
 
 Use this reference when creating, normalizing, or updating `ARCHITECTURE/`.
 
-The WF architecture format is industry-aligned, not a full clone of any one framework. Use arc42-style coverage for goals and constraints, C4-style thinking for system views and boundaries, DDD/vertical-slice thinking for subsystem boundaries, and optional ADRs for important decisions.
+The Project Orchestrator architecture format is industry-aligned, not a full clone of any one framework. Use arc42-style coverage for goals and constraints, C4-style thinking for system views and boundaries, DDD/vertical-slice thinking for subsystem boundaries, and optional ADRs for important decisions.
 
 Reference anchors:
 
@@ -13,16 +13,16 @@ Reference anchors:
 
 ## Planning-First Architecture
 
-For `$wf arche`, first determine whether the user wants exploration, an architecture plan, or direct documentation edits from accepted product, function, or UI direction.
+For `$po arche`, first determine whether the user wants exploration, an architecture plan, or direct documentation edits from accepted product, function, or UI direction.
 
 - Ask only for missing intent that cannot be learned from existing docs or code.
 - Use current code and current docs as runtime truth for what exists now.
 - Treat provided product direction, rough function scope, UI/design input, constraints, tradeoffs, and target users as accepted user intent unless the user asks to challenge it.
-- Do not invent business strategy, GTM, PMF analysis, pricing, promotion plans, or raw product positioning as part of normal WF architecture work.
+- Do not invent business strategy, GTM, PMF analysis, pricing, promotion plans, or raw product positioning as part of normal Project Orchestrator architecture work.
 - When architecture intent is unclear, clarify project goal, target users, in-scope and out-of-scope areas, constraints, system type, desired documentation depth, and whether ADRs are needed before writing docs.
 - When the user asks for global view, overall architecture, whole project direction, MVP planning, final product direction, repo structure, or broad subsystem boundaries, read broadly across the relevant `ARCHITECTURE/current/` docs. Do not use a hard file cap for broad architecture work.
 - When the user asks for MVP/V1, Post-MVP/V1.x, Future/V2+, roadmap, milestones, phases, or final-product direction, use `references/milestone-planning.md`.
-- When the user provides a whole idea document at WF startup, distill accepted product truth into `01-05`. Keep a rich cleaned version of the idea in `01-project-intent.md`; do not store the raw full brief by default.
+- When the user provides a whole idea document at Project Orchestrator startup, distill accepted product truth into `01-05`. Keep a rich cleaned version of the idea in `01-project-intent.md`; do not store the raw full brief by default.
 - When the user is in Codex Plan Mode, produce a decision-complete architecture plan before file changes.
 - When the user has already specified the architecture change clearly, update the relevant docs directly.
 - Do not update `TODO.md` for pure architecture discussion unless the architecture work becomes tracked project work.
@@ -84,7 +84,7 @@ Create ADRs only for decisions future contributors would otherwise re-litigate o
 
 ## Milestones And Roadmap
 
-Use `references/milestone-planning.md` when `$wf arche` needs MVP/V1, Post-MVP/V1.x, optional Future/V2+, roadmap, phase, or final-product direction.
+Use `references/milestone-planning.md` when `$po arche` needs MVP/V1, Post-MVP/V1.x, optional Future/V2+, roadmap, phase, or final-product direction.
 
 Keep milestone summaries compact inside `ARCHITECTURE/current/02-milestones.md`. Milestones guide architecture and session planning, but they are not TODO sessions or ADRs.
 
@@ -92,13 +92,13 @@ Detailed business logic, promotion, go-to-market, GTM, separate `PRODUCT/` docs,
 
 ## Accepted-Plan-To-Repo SOP
 
-WF supports this sequence without adding new commands:
+Project Orchestrator supports this sequence without adding new commands:
 
 1. The user arrives with accepted business/product direction, rough function scope, and UI/design direction when available.
-2. WF initializes or updates architecture docs, keeping rich accepted intent in `01`, milestone/function scope in `02`, system shape in `03`, UI/design direction in `04`, and repo mapping in `05`.
-3. WF turns accepted milestone scope into session-sized `TODO.md` entries.
+2. Project Orchestrator initializes or updates architecture docs, keeping rich accepted intent in `01`, milestone/function scope in `02`, system shape in `03`, UI/design direction in `04`, and repo mapping in `05`.
+3. Project Orchestrator turns accepted milestone scope into session-sized `TODO.md` entries.
 4. Code-manager guidance owns detailed code organization, imports, public APIs, tests, refactors, and implementation loops.
-5. WF records completed outcomes in `LOG.md` and updates docs only when project truth changes.
+5. Project Orchestrator records completed outcomes in `LOG.md` and updates docs only when project truth changes.
 
 ## Update Boundaries
 
@@ -123,7 +123,7 @@ WF supports this sequence without adding new commands:
 
 ## Existing Repo Migration
 
-- For new WF bootstraps, use the current numbering.
+- For new Project Orchestrator bootstraps, use the current numbering.
 - For existing repos, do not blindly rename architecture files unless the user asks for retrofit or normalization.
 - If old milestone content exists in `01-project-intent.md`, move only accepted milestone direction into `02-milestones.md`; keep stable project target content in `01-project-intent.md`.
 - If existing `02-overall-system-design.md`, `03-overall-ui-design.md`, or `04-repo-map.md` exist, plan a safe rename to `03`, `04`, and `05` only when links and references can be updated cleanly.
