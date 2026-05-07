@@ -23,6 +23,8 @@ Use this skill only when the user explicitly invokes `$po` or clearly asks for t
 - Treat `TODO.md` as the active session queue, not a backlog.
 - Treat `LOG.md` as the completed-session record, not a transcript or changelog.
 - Use the Project Orchestrator session tracking standard in `references/session-tracking.md` when creating, normalizing, or updating `TODO.md` and `LOG.md`.
+- Treat session boundaries as the only time to roll tracking forward: when a session is complete or reaches a meaningful stopping point, write the matching `LOG.md` entry and close out or carry forward the matching `TODO.md` session.
+- Keep tracking lightweight. Do not rewrite `TODO.md` after each small edit or partial check-in.
 - Treat milestones as product and architecture direction, not execution sessions or a `TODO.md` backlog.
 - Build milestones through detailed TODO sessions. A milestone is complete only when the implementation sessions derived from it are finished, verified, and recorded.
 - Treat `$po arche` as shorthand for converting accepted product/UI/function direction into architecture docs, lightweight milestone direction, and subsystem boundaries.
